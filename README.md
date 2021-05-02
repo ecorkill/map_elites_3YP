@@ -3,27 +3,27 @@ This repository contains the code to run a MAP-Elites algorithm with a model of 
 
 The MAP-Elites algorithm was modified to work with this application. The original MAP-Elites algorithm can be found at: https://github.com/resibots/pymap_elites. 
 
-Dependencies and Requirements:
-•	Python 3.9.1 (may work with other versions of python3)
-•	Numpy
-•	Mpl_toolkits (install matplotlib)
+## Dependencies and Requirements:
+- Python 3.9.1 (may work with other versions of python3)
+- Numpy
+- Mpl_toolkits (install matplotlib)
 
-Defining Simulation Parameters:
-•	MAX_EVAL: the total number of evaluations for a simulation
-•	NUM_BINS: the number of bins in the behaviour map
-•	START_POP: the number of policies in the starting population 
-•	BATCH_SZ: the size of each generation
-•	ALPHA: constant used in the crossover equation
-•	SAMPLE: the size of the sampling period
-•	SEED: the random seed used for initial population generation
-•	RADIUS: the distance that determines the number of suitable solutions
+## Defining Simulation Parameters:
+- MAX_EVAL: the total number of evaluations for a simulation
+- NUM_BINS: the number of bins in the behaviour map
+- START_POP: the number of policies in the starting population 
+- BATCH_SZ: the size of each generation
+- ALPHA: constant used in the crossover equation
+- SAMPLE: the size of the sampling period
+- SEED: the random seed used for initial population generation
+- RADIUS: the distance that determines the number of suitable solutions
 
-Code Dependencies:
-•	Map_elites.py relies on model.py and fitnessMaps.py
-•	Model.py relies on robotClasses.py
-•	fitnessMaps.py relies on measures.py and a text file that contains a record of the best policies generated for each bin in the map in the past.
+## Code Dependencies:
+- Map_elites.py relies on model.py and fitnessMaps.py
+- Model.py relies on robotClasses.py
+- fitnessMaps.py relies on measures.py and a text file that contains a record of the best policies generated for each bin in the map in the past.
 
-Running Simulations:
+## Running Simulations:
 To run undamaged robot simulations, run the command:
 
 	$ python3 map_elites.py
@@ -39,8 +39,8 @@ To run damage injection simulations, use the command:
 
 This relies on the final maps generated after running the previous command. The damage injected is specified in the function assess(). 
 
-	damageAngle = [1, 1, 1, 1, 1, 1, 1]
-   	 angles = [0, 0, 0, 0, 0, 0, 0]
+	$ damageAngle = [1, 1, 1, 1, 1, 1, 1]
+   	$ angles = [0, 0, 0, 0, 0, 0, 0]
 
 damageAngle specifies the type of damage injected into each angle, where 0 specifies that a joint is at a fixed angle and 1 specifies an angle has a fixed offset. Each entry in the array represents the joint, so the first element is joint 1 and the last element is joint 7. Angles specifies the fixed angle or angle offset of each joint. 
 
